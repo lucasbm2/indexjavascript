@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Introducción a JavaScript</h1>
+    <button onclick="suma()">Sumar</button>
+    <button onclick="login()">Login</button>
+    <button onclick="compruebaPar()">Comprueba par</button>
+    <button onclick="compruebaEdad()">Comprueba edad</button>
+    <button onclick="calculaIndiceMasaCorporal()">Comprueba indice</button>
+    <button onclick="media()">Hacer media</button>
+    <button onclick="media3numeros()">Hacer media 2</button>
+    <button onclick="calculaAreaTriangulo()">Calcula Area Triangulo </button>
+    <script>/*
+ 
+//CREAMOS UN MENU PARA QUE AL ENTRAR A LA WEB APAREZCA PARA INTRODUCIR TU NOMBRE
+alert("Bienvenido a mi página");
+let nombre = prompt("Cómo te llamas?");
+alert("Encantado de conocerte " + nombre);
+*/
+        /*
+    //CREAMOS UN MENU PARA QUE AL ENTRAR A LA WEB APAREZCA PARA INTRODUCIR NUMEROS
+    function suma() {
+    alert("Introduce tus propios numeros");
+    
+    
+    let n1 = prompt("Dime un número");
+    if (isNaN(n1)) {
+    alert("NO es un número")
+    } else {
+    let n2 = prompt("Dime otro");
+    if(isNaN(n2)){
+    alert("NO es un número")
+    return;
+    }
+    } 
+     
+    
+    let suma = Number(n1) + Number(n2);
+    alert("La suma de " + n1 + " mas " + n2 + " es " + suma);
+    }
+    */
+        function login() {
+            let usuario = prompt("Introduzca usuario");
+            let contrasena = prompt("Introduzca contrasena");
+            if (usuario == "admin" && contrasena == "1234") {
+                alert("Bienvenido a mi pagina");
+
+            }
+            else {
+                alert("Acceso restringido");
+            }
+        }
+        function esPar(n) {
+            if (n % 2 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function compruebaPar() {
+            let numero = prompt("Dime el numero");
+            if (isNaN(numero)) {
+                alert("Te he dicho un número!");
+                return;
+            }
+            if (esPar(numero)) {
+                alert("Es par");
+            } else {
+                alert("Es impar");
+            }
+        }
+
+        function compruebaEdad() {
+            let edad = prompt("Dime tu edad con números");
+            while (isNaN(edad)) {
+                alert("Te he dicho con números!");
+                edad = prompt("Repíteme el número");
+            }
+
+            if (edad >= 18) {
+                alert("Es mayor, entra");
+            } else {
+                alert("Es menor, no entra");
+            }
+        }
+
+        function imc(m, h) {
+            indice = m / Math.pow(h, 2);
+            return indice;
+        }
+
+        function calculaIndiceMasaCorporal() {
+            masa = prompt("Dime tu peso en kilos");
+            altura = prompt("Dime tu altura en metros");
+            alert(imc(masa, altura));
+        }
+
+
+        function media() {
+            let n1 = prompt("Dime el primer numero");
+            let n2 = prompt("Dime el segundo numero");
+            let n3 = prompt("Dime el tercer numero");
+            media = (Number(n1) + Number(n2) + Number(n3)) / 3;
+            alert("La media es: " + media);
+        }
+
+        function media3numeros() {
+            let n1 = prompt("Dime el primer numero");
+            let n2 = prompt("Dime el segundo numero");
+            let n3 = prompt("Dime el tercer numero");
+            let med = (parseFloat(n1) + parseFloat(n2) + parseFloat(n3)) / 3;
+            alert("La media es: " + med);
+        }
+
+        /* **********************************************************
+        *areaTriangulo: recibe la base b y la altura
+        h y devuelve el área del triangulo
+        *************************************************************/
+
+        function areaTriangulo(b, h) {
+            let area = (Number(b) * Number(h)) / 2;
+            return area;
+        }
+        /* **********************************************************
+        *calculaAreaTriangulo: pregunta la base y
+        *la altura y llama a la funcion areaTriangulo
+        *para calcular el área y muestra el resultado
+        *************************************************************/
+        function calculaAreaTriangulo() {
+            let b = prompt("Dime la base");
+            let h = prompt("Dime la altura");
+            let area = areaTriangulo (b,h)
+            alert("El area es:  " + area );
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
